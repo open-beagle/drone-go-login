@@ -66,11 +66,11 @@ func main() {
 		}
 	case "other":
 		middleware = &other.Config{
-			ClientID:     "222222",
-			ClientSecret: "22222222",
+			ClientID:     *clientID,
+			ClientSecret: *clientSecret,
 			RedirectURL:  *redirectURL,
 			Scope:        []string{"all"},
-			Server:       "http://oauth.wodcloud.com",
+			Server:       *providerURL,
 		}
 	case "gitee":
 		middleware = &gitee.Config{

@@ -3,3 +3,5 @@
 *.out
 _*.md
 .vscode
+
+__debug_bin
