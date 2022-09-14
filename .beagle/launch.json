@@ -11,15 +11,16 @@
       "mode": "auto",
       "program": "${workspaceFolder}/example/main.go",
       "args": [
-        // "--redirect-url=http://localhost.fiddler:8080/login",
+        "--redirect-url=http://localhost.fiddler:8080/login",
         "--provider=other",
-        "--provider-url=http://oauth.wodcloud.com",
-        "--client-id=222222",
-        "--client-secret=22222222"
+        "--provider-url=https://cloud.wodcloud.com/git",
+        "--client-id=1e779d356e0d8eea77a9022bda9a26ffd0a4ff1c73145c94522d934e7d80e53b",
+        "--client-secret=0ad026bb426c1f4bdae9126f6b6877c9eebff45772380bced369c2ef008b9be1"
       ],
-      "env": {
-        "HTTPS_PROXY": "http://192.168.1.29:8888"
-      },
+      // "env": {
+      //   "HTTPS_PROXY": "http://192.168.1.29:8888",
+      //   "HTTP_PROXY": "http://192.168.1.29:8888"
+      // },
     }
   ]
 }

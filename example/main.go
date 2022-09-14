@@ -5,6 +5,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"flag"
 	"fmt"
 	"log"
@@ -61,7 +62,9 @@ func main() {
 			ClientID:     *clientID,
 			ClientSecret: *clientSecret,
 			RedirectURL:  *redirectURL,
+			Server:       *providerURL,
 			Scope:        []string{"read_user", "api"},
+			Client:       defaultClient(true),
 		}
 	case "other":
 		middleware = &other.Config{
@@ -70,6 +73,7 @@ func main() {
 			RedirectURL:  *redirectURL,
 			Scope:        []string{"all"},
 			Server:       *providerURL,
+			Client:       defaultClient(true),
 		}
 	case "gitee":
 		middleware = &gitee.Config{
@@ -179,4 +183,23 @@ func usage() {
   --redirect-url          oauth redirect url
   --address               http server address (:8080)
   --help                  display this help and exit`)
+}
+
+// defaultClient provides a default http.Client. If skipverify
+// is true, the default transport will skip ssl verification.
+func defaultClient(skipverify bool) *http.Client {
+	client := &http.Client{}
+	client.Transport = defaultTransport(skipverify)
+	return client
+}
+
+// defaultTransport provides a default http.Transport. If
+// skipverify is true, the transport will skip ssl verification.
+func defaultTransport(skipverify bool) http.RoundTripper {
+	return &http.Transport{
+		Proxy: http.ProxyFromEnvironment,
+		TLSClientConfig: &tls.Config{
+			InsecureSkipVerify: skipverify,
+		},
+	}
 }
