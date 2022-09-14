@@ -50,7 +50,6 @@ func main() {
 	}
 
 	var middleware login.Middleware
-	*provider = "other"
 	switch *provider {
 	case "gogs", "gitea":
 		middleware = &gogs.Config{

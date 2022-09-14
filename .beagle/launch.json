@@ -11,11 +11,15 @@
       "mode": "auto",
       "program": "${workspaceFolder}/example/main.go",
       "args": [
+        // "--redirect-url=http://localhost.fiddler:8080/login",
         "--provider=other",
-        "--provider-url=http://auth.wodcloud.com",
+        "--provider-url=http://oauth.wodcloud.com",
         "--client-id=222222",
         "--client-secret=22222222"
       ],
+      "env": {
+        "HTTPS_PROXY": "http://192.168.1.29:8888"
+      },
     }
   ]
 }
