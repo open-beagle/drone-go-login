@@ -13,11 +13,12 @@ import (
 
 	"github.com/drone/go-login/login"
 	"github.com/drone/go-login/login/bitbucket"
+	"github.com/drone/go-login/login/gitee"
 	"github.com/drone/go-login/login/github"
 	"github.com/drone/go-login/login/gitlab"
-	"github.com/drone/go-login/login/gitee"
 	"github.com/drone/go-login/login/gogs"
 	"github.com/drone/go-login/login/logger"
+	"github.com/drone/go-login/login/other"
 	"github.com/drone/go-login/login/stash"
 )
 
@@ -49,6 +50,7 @@ func main() {
 	}
 
 	var middleware login.Middleware
+	*provider = "other"
 	switch *provider {
 	case "gogs", "gitea":
 		middleware = &gogs.Config{
@@ -61,6 +63,14 @@ func main() {
 			ClientSecret: *clientSecret,
 			RedirectURL:  *redirectURL,
 			Scope:        []string{"read_user", "api"},
+		}
+	case "other":
+		middleware = &other.Config{
+			ClientID:     "222222",
+			ClientSecret: "22222222",
+			RedirectURL:  *redirectURL,
+			Scope:        []string{"all"},
+			Server:       "http://oauth.wodcloud.com",
 		}
 	case "gitee":
 		middleware = &gitee.Config{
