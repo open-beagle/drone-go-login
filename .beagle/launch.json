@@ -11,15 +11,28 @@
       "mode": "auto",
       "program": "${workspaceFolder}/example/main.go",
       "args": [
-        "--redirect-url=http://localhost.fiddler:8080/login",
+        "--redirect-url=http://localhost:8080/login",
         "--provider=other",
+        // oauth2.0
+        // "--provider-url=http://oauth.wodcloud.com",
+        // "--client-id=222222",
+        // "--client-secret=22222222"
+        // gitlab
         "--provider-url=https://cloud.wodcloud.com/git",
-        "--client-id=1e779d356e0d8eea77a9022bda9a26ffd0a4ff1c73145c94522d934e7d80e53b",
-        "--client-secret=0ad026bb426c1f4bdae9126f6b6877c9eebff45772380bced369c2ef008b9be1"
+        "--client-id=afae23333ae89c05c012879d84308d0988c1280e57efbdc7bb54e91ad99977b4",
+        "--client-secret=bf26d5b615b48627900a9701ac47e528752b83a7bcdc184c027443feb3faa12b"
+        // github
+        // "--provider-url=https://github.com",
+        // "--client-id=b4fcc4de1e45148e913a",
+        // "--client-secret=5d7cd1e5e570d68fb0e6802218128a2cb04c510d"
+        // gitee
+        // "--provider-url=https://gitee.com",
+        // "--client-id=70f3121fcf4e66145def0c6fad4dc36d76548eeba1d6de3e57d6ed47eea52e20",
+        // "--client-secret=9c5921717dc6da6180dd7ac407392fbbdd4fae109f89892706474ecc4ef8d2ad"
       ],
       // "env": {
-      //   "HTTPS_PROXY": "http://192.168.1.29:8888",
-      //   "HTTP_PROXY": "http://192.168.1.29:8888"
+      //   "HTTPS_PROXY": "http://192.168.31.131:8888",
+      //   "HTTP_PROXY": "http://192.168.31.131:8888"
       // },
     }
   ]

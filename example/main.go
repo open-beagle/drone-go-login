@@ -71,7 +71,7 @@ func main() {
 			ClientID:     *clientID,
 			ClientSecret: *clientSecret,
 			RedirectURL:  *redirectURL,
-			Scope:        []string{"all"},
+			Scope:        []string{"read_user", "api"},
 			Server:       *providerURL,
 			Client:       defaultClient(true),
 		}
