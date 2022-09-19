@@ -19,7 +19,7 @@ import (
 	"github.com/drone/go-login/login/gitlab"
 	"github.com/drone/go-login/login/gogs"
 	"github.com/drone/go-login/login/logger"
-	"github.com/drone/go-login/login/other"
+	bgcloud "github.com/drone/go-login/login/other"
 	"github.com/drone/go-login/login/stash"
 )
 
@@ -66,8 +66,8 @@ func main() {
 			Scope:        []string{"read_user", "api"},
 			Client:       defaultClient(true),
 		}
-	case "other":
-		middleware = &other.Config{
+	case "bgcloud":
+		middleware = &bgcloud.Config{
 			ClientID:     *clientID,
 			ClientSecret: *clientSecret,
 			RedirectURL:  *redirectURL,
