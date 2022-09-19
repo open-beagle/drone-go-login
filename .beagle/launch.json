@@ -14,13 +14,13 @@
         "--redirect-url=http://localhost:8080/login",
         "--provider=other",
         // oauth2.0
-        // "--provider-url=http://oauth.wodcloud.com",
-        // "--client-id=222222",
-        // "--client-secret=22222222"
+        "--provider-url=https://cloud.wodcloud.com/awecloud/dex",
+        "--client-id=336fe21bbea699845c5212b85b2a1baafc302d3e07d270f25bc967954ed99bc5",
+        "--client-secret=04c6b83e968404eec18dc4e4f40c7c156001a50e5ae526aa8fa9c1569b1d2714"
         // gitlab
-        "--provider-url=https://cloud.wodcloud.com/git",
-        "--client-id=afae23333ae89c05c012879d84308d0988c1280e57efbdc7bb54e91ad99977b4",
-        "--client-secret=bf26d5b615b48627900a9701ac47e528752b83a7bcdc184c027443feb3faa12b"
+        // "--provider-url=https://cloud.wodcloud.com/git",
+        // "--client-id=afae23333ae89c05c012879d84308d0988c1280e57efbdc7bb54e91ad99977b4",
+        // "--client-secret=bf26d5b615b48627900a9701ac47e528752b83a7bcdc184c027443feb3faa12b"
         // github
         // "--provider-url=https://github.com",
         // "--client-id=b4fcc4de1e45148e913a",
