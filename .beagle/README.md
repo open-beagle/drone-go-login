@@ -10,12 +10,7 @@ git fetch upstream
 git merge v1.1.0
 ```
 
-## debug
 
-```bash
-bash .beagle/dist.sh
-rm -rf .tmp/awecloud-btel-sdk.out
-```
 
 ## dev
 

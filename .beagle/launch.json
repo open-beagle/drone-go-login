@@ -12,8 +12,8 @@
       "program": "${workspaceFolder}/example/main.go",
       "args": [
         "--redirect-url=http://localhost:8080/login",
-        "--provider=bgcloud",
-        // bgcloud
+        "--provider=beagle",
+        // beagle
         "--provider-url=https://cloud.wodcloud.com",
         "--client-id=336fe21bbea699845c5212b85b2a1baafc302d3e07d270f25bc967954ed99bc5",
         "--client-secret=04c6b83e968404eec18dc4e4f40c7c156001a50e5ae526aa8fa9c1569b1d2714"
