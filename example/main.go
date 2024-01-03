@@ -8,6 +8,7 @@ import (
 	"crypto/tls"
 	"flag"
 	"fmt"
+	"github.com/drone/go-login/login/xc"
 	"log"
 	"net/http"
 	"os"
@@ -106,6 +107,15 @@ func main() {
 			CallbackURL: *redirectURL,
 			ConsumerKey: *consumerKey,
 			PrivateKey:  privateKey,
+		}
+	case "xc":
+		middleware = &xc.Config{
+			ClientID:     *clientID,
+			ClientSecret: *clientSecret,
+			RedirectURL:  *redirectURL,
+			Scope:        []string{"read_user", "api"},
+			Server:       *providerURL,
+			Client:       defaultClient(true),
 		}
 	}
 

@@ -5,3 +5,4 @@ _*.md
 .vscode
 
 __debug_bin
+.idea
